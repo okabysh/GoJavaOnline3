@@ -1,4 +1,4 @@
-package src.Module_04_0;
+package src.Module_04_test;
 
 /**
  * Created by Oleg Kabysh on 05.06.2016.
