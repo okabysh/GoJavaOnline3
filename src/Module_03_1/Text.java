@@ -1,5 +1,5 @@
 package src.Module_03_1;
 
-public class Text {
+public class Text extends Files {
 
 }
