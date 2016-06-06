@@ -15,7 +15,11 @@ public class CalculationLengthSegment {
     }
 
     public double getLengthSegment() {
-        double lengthSegment = Math.sqrt(Math.pow(Math.abs(coordinateX2-coordinateX1),2)+Math.pow(Math.abs(coordinateY2-coordinateY1),2));
+        /* SQRT(ABS(X2-X1)^2+ABS(Y2-Y1)^2)*/
+        double lengthSegmentStep1 = Math.abs(coordinateX2-coordinateX1);
+        double lengthSegmentStep2 = Math.abs(coordinateY2-coordinateY1);
+        double lengthSegmentStep3 = Math.pow(lengthSegmentStep1,2)+Math.pow(lengthSegmentStep2,2);
+        double lengthSegment = Math.sqrt(lengthSegmentStep3);
         return lengthSegment;
     }
 }
