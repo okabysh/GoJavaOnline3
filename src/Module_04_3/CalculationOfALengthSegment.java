@@ -7,6 +7,6 @@ public class CalculationOfALengthSegment {
         int coordinateX2 = -2;
         int coordinateY2 = 4;
         double LengthSegment = new CalculationLengthSegment(coordinateX1,coordinateY1,coordinateX2,coordinateY2).getLengthSegment();
-        System.out.println("Coordinate point #1 is ("+coordinateX1+","+coordinateY1+"), coordinate point #2 is ("+coordinateX2+","+coordinateY2+"); length of the segment is "+LengthSegment+" mm");
+        System.out.println("Coordinate point #1 is (" + coordinateX1 + "," + coordinateY1 + "), coordinate point #2 is (" + coordinateX2 + "," + coordinateY2 + "); length of the segment is " + LengthSegment + " mm");
     }
 }
