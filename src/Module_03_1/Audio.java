@@ -1,5 +1,5 @@
 package src.Module_03_1;
 
-public class Audio extends Files {
+public class Audio extends File {
 
 }

@@ -1,5 +1,5 @@
 package src.Module_03_1;
 
-public class Picture extends Files {
+public class Picture extends File {
 
 }
