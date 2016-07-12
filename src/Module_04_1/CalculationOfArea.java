@@ -1,18 +1,63 @@
 package src.Module_04_1;
 
+import java.util.Scanner;
+
 public class CalculationOfArea {
     public static void main(String[] args) {
-        int rectangleSideA = 5;
-        int rectangleSideB = 25;
-        int trianleSideA = 7;
-        int triangleHeight = 7;
-        int circleRadius = 13;
+        // before
+        //int rectangleSideA = 5;
+        //int rectangleSideB = 25;
+        //int trianleSideA = 7;
+        //int triangleHeight = 7;
+        //int circleRadius = 13;
+
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please, enter 'rectangle side A':");
+        int rectangleSideA = scanner.nextInt();
+        boolean checkRectangleSideA = new CheckValue(rectangleSideA).Check();
+        if (checkRectangleSideA) {
+        } else {
+            return;
+        }
+        System.out.println("Please, enter number 'rectangle side B':");
+        int rectangleSideB = scanner.nextInt();
+        boolean checkRectangleSideB = new CheckValue(rectangleSideB).Check();
+        if (checkRectangleSideB) {
+        } else {
+            return;
+        }
         int areaRectangle = new AreaOfARectangle(rectangleSideA,rectangleSideB).getArea();
-        float areaTriangle = new AreaOfATriangle(trianleSideA,triangleHeight).getArea();
-        double areaCircle = new AreOfACircle(circleRadius).getArea();
         System.out.println("Incoming data: rectangle, side a = " + rectangleSideA + " mm, side b = " + rectangleSideB + " mm; area of a rectangle: " + areaRectangle + " mm^2");
+
+        System.out.println("Please, enter number 'trianle side A':");
+        int trianleSideA = scanner.nextInt();
+        boolean checktTianleSideA = new CheckValue(trianleSideA).Check();
+        if (checktTianleSideA) {
+        } else {
+            return;
+        }
+         System.out.println("Please, enter number 'triangle height':");
+        int triangleHeight = scanner.nextInt();
+        boolean checkTriangleHeight = new CheckValue(triangleHeight).Check();
+        if (checkTriangleHeight) {
+        } else {
+            return;
+        }
+
+        float areaTriangle = new AreaOfATriangle(trianleSideA,triangleHeight).getArea();
         System.out.println("Incoming data: triangle, side a = " + trianleSideA + " mm, height = " + triangleHeight + " mm; area of a triangle: " + areaTriangle + " mm^2");
+
+        System.out.println("Please, enter number 'circle radius':");
+        int circleRadius = scanner.nextInt();
+        boolean checkCircleRadius = new CheckValue(circleRadius).Check();
+        if (checkCircleRadius) {
+        } else {
+            return;
+        }
+        double areaCircle = new AreOfACircle(circleRadius).getArea();
         System.out.println("Incoming data: circle, radius = " + circleRadius + " mm; area of a circle: " + areaCircle + " mm^2");
+
         System.out.println("Have a nice day!");
     }
 }
