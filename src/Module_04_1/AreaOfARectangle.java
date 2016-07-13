@@ -10,7 +10,7 @@ public class AreaOfARectangle {
     }
 
     public int getArea() {
-        area = this.sideA * this.sideB;
+        area = sideA * sideB;
         return area;
     }
 }

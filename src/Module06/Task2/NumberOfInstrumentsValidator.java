@@ -26,11 +26,7 @@ public class NumberOfInstrumentsValidator {
             }
         }
         if (!statusValidate) {
-           try {
-                throw new IllegalArgumentException();
-            } catch (IllegalArgumentException e) {
-                System.out.println(statusText);
-            }
+            new MyException(statusText);
         }
     }
 }

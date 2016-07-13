@@ -45,13 +45,8 @@ public class Store {
         if (statusOrder1) {
             System.out.println("Order #1 is executed (piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
         } else {
-            try {
-                throw new ArithmeticException();
-            } catch (ArithmeticException e) {
-                System.out.println("Exception: order #1 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
-            } finally {
-                return;
-            }
+            new MyException("Exception: order #1 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
+            return;
         }
 
         // order#2
@@ -73,13 +68,8 @@ public class Store {
         if (statusOrder2) {
             System.out.println("Order #2 is executed (piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
         } else {
-            try {
-                throw new ArithmeticException();
-            } catch (ArithmeticException e) {
-                System.out.println("Exception: order #2 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
-            } finally {
-                return;
-            }
+            new MyException("Exception: order #2 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
+            return;
         }
 
         // order#3
@@ -101,13 +91,8 @@ public class Store {
         if (statusOrder3) {
             System.out.println("Order #3 is executed (piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
         } else {
-            try {
-                throw new ArithmeticException();
-            } catch (ArithmeticException e) {
-                System.out.println("Exception: order #3 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
-            } finally {
-                return;
-            }
+            new MyException("Exception: order #3 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
+            return;
         }
     }
 }

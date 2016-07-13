@@ -10,7 +10,7 @@ public class AreaOfATriangle {
     }
 
     public float getArea() {
-        area = 0.5f * this.sideA * this.height;
+        area = 0.5f * sideA * height;
         return area;
     }
 }

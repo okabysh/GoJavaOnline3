@@ -7,15 +7,10 @@ public class CheckValue {
         this.value = value;
     }
 
-    public boolean Check() {
+    public boolean check() {
         if (value <= 0) {
-            try {
-                throw new ArithmeticException();
-            } catch (ArithmeticException e) {
-                System.out.println("You enter value: " + value + ". It is a negative or zero value, please enter positive value.");
-            } finally {
-                return false;
-            }
+            new MyException("You enter value: " + value + ". It is a negative or zero value, please enter positive value.");
+            return false;
         } else {
             return true;
         }

@@ -13,7 +13,7 @@ public class AreOfACircle {
     }
 
     public double getArea() {
-        area = this.radius * this.pi;
+        area = radius * pi;
         return area;
     }
 }

@@ -15,16 +15,14 @@ public class CalculationOfArea {
 
         System.out.println("Please, enter 'rectangle side A':");
         int rectangleSideA = scanner.nextInt();
-        boolean checkRectangleSideA = new CheckValue(rectangleSideA).Check();
-        if (checkRectangleSideA) {
-        } else {
+        boolean checkRectangleSideA = new CheckValue(rectangleSideA).check();
+        if (!checkRectangleSideA) {
             return;
         }
         System.out.println("Please, enter number 'rectangle side B':");
         int rectangleSideB = scanner.nextInt();
-        boolean checkRectangleSideB = new CheckValue(rectangleSideB).Check();
-        if (checkRectangleSideB) {
-        } else {
+        boolean checkRectangleSideB = new CheckValue(rectangleSideB).check();
+        if (!checkRectangleSideB) {
             return;
         }
         int areaRectangle = new AreaOfARectangle(rectangleSideA,rectangleSideB).getArea();
@@ -32,16 +30,14 @@ public class CalculationOfArea {
 
         System.out.println("Please, enter number 'trianle side A':");
         int trianleSideA = scanner.nextInt();
-        boolean checktTianleSideA = new CheckValue(trianleSideA).Check();
-        if (checktTianleSideA) {
-        } else {
+        boolean checktTianleSideA = new CheckValue(trianleSideA).check();
+        if (!checktTianleSideA) {
             return;
         }
          System.out.println("Please, enter number 'triangle height':");
         int triangleHeight = scanner.nextInt();
-        boolean checkTriangleHeight = new CheckValue(triangleHeight).Check();
-        if (checkTriangleHeight) {
-        } else {
+        boolean checkTriangleHeight = new CheckValue(triangleHeight).check();
+        if (!checkTriangleHeight) {
             return;
         }
 
@@ -50,9 +46,8 @@ public class CalculationOfArea {
 
         System.out.println("Please, enter number 'circle radius':");
         int circleRadius = scanner.nextInt();
-        boolean checkCircleRadius = new CheckValue(circleRadius).Check();
-        if (checkCircleRadius) {
-        } else {
+        boolean checkCircleRadius = new CheckValue(circleRadius).check();
+        if (!checkCircleRadius) {
             return;
         }
         double areaCircle = new AreOfACircle(circleRadius).getArea();

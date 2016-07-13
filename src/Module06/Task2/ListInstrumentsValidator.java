@@ -19,11 +19,7 @@ public class ListInstrumentsValidator {
             }
         }
         if (!statusValidate) {
-            try {
-                throw new IllegalArgumentException();
-            } catch (IllegalArgumentException e) {
-                System.out.println("Exception: the pruduct (" + statusText + ") is not in warehouse! ");
-            }
+            new MyException("Exception: the pruduct (" + statusText + ") is not in warehouse! ");
         }
     }
 }
