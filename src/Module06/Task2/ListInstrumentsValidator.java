@@ -6,7 +6,7 @@ import java.util.Set;
 public class ListInstrumentsValidator {
     static boolean statusValidate = true;
     static String statusText = "";
-    public void Validate(Map inMap) throws IllegalArgumentException {
+    public void validate(Map inMap) throws IllegalArgumentException {
         // проверим не ли других товаров для списания кроме: piano, guitar, trumpet
         Set<Map.Entry<String,Integer>> set = inMap.entrySet();
         for (Map.Entry<String,Integer> me: set) {
@@ -19,7 +19,7 @@ public class ListInstrumentsValidator {
             }
         }
         if (!statusValidate) {
-            new MyException("Exception: the pruduct (" + statusText + ") is not in warehouse! ");
+            System.out.println("Exception: the pruduct (" + statusText + ") is not in warehouse! ");
         }
     }
 }

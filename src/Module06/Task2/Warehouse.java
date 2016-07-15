@@ -6,29 +6,27 @@ public class Warehouse {
     private static int piano;
     private static int guitar;
     private static int trumpet;
-    Warehouse() {
-    }
 
     public boolean getInsruments(Map inMap) {
         boolean notAllow = false;
         int toOrderPiano = (int) inMap.get("piano");
         int toOrderGuitar = (int) inMap.get("guitar");
         int toOrderTrumpet = (int) inMap.get("trumpet");
-        if (toOrderPiano > this.piano) {
+        if (toOrderPiano > piano) {
             notAllow = true;
         }
-        if (toOrderGuitar > this.guitar) {
+        if (toOrderGuitar > guitar) {
             notAllow = true;
         }
-        if (toOrderTrumpet > this.trumpet) {
+        if (toOrderTrumpet > trumpet) {
             notAllow = true;
         }
         if (notAllow) {
             return false;
         } else {
-            this.piano = this.piano - toOrderPiano;
-            this.guitar = this.guitar - toOrderGuitar;
-            this.trumpet = this.trumpet - toOrderTrumpet;
+            piano = piano - toOrderPiano;
+            guitar = guitar - toOrderGuitar;
+            trumpet = trumpet - toOrderTrumpet;
             return true;
         }
 

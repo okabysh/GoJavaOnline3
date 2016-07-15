@@ -1,7 +1,6 @@
 package src.Module06.Task2;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Store {
     static int piano;
@@ -37,15 +36,15 @@ public class Store {
         // номенклатура "drums", которая не предусмотрена на складе (для проверки работы исключения)
         //order.put("drums",new Integer(1));
         // проверка нет ли в заказе номенклатуры, которой не предусмотрено на складе (свое исключение)
-        validatorNomenclatures.Validate(order);
+        validatorNomenclatures.validate(order);
         // проверка количества номенклатуры в заказе (=0 и <0)
-        validatorNumbers.Validate(order);
+        validatorNumbers.validate(order);
         // попытка списания Заказа №1
         boolean statusOrder1 = new Warehouse().getInsruments(order);
         if (statusOrder1) {
             System.out.println("Order #1 is executed (piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
         } else {
-            new MyException("Exception: order #1 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
+            System.out.println("Exception: order #1 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
             return;
         }
 
@@ -60,15 +59,15 @@ public class Store {
         // номенклатура "drums", которая не предусмотрена на складе (для проверки работы исключения)
         //order.put("drums",new Integer(1));
         // проверка нет ли в заказе номенклатуры, которой не предусмотрено на складе (свое исключение)
-        validatorNomenclatures.Validate(order);
+        validatorNomenclatures.validate(order);
         // проверка количества номенклатуры в заказе (=0 и <0)
-        validatorNumbers.Validate(order);
+        validatorNumbers.validate(order);
         // попытка списания Заказа №2
         boolean statusOrder2 = new Warehouse().getInsruments(order);
         if (statusOrder2) {
             System.out.println("Order #2 is executed (piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
         } else {
-            new MyException("Exception: order #2 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
+            System.out.println("Exception: order #2 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
             return;
         }
 
@@ -83,15 +82,15 @@ public class Store {
         // номенклатура "drums", которая не предусмотрена на складе (для проверки работы исключения)
         //order.put("drums",new Integer(1));
         // проверка нет ли в заказе номенклатуры, которой не предусмотрено на складе (свое исключение)
-        validatorNomenclatures.Validate(order);
+        validatorNomenclatures.validate(order);
         // проверка количества номенклатуры в заказе (=0 и <0)
-        validatorNumbers.Validate(order);
+        validatorNumbers.validate(order);
         // попытка списания Заказа №3
         boolean statusOrder3 = new Warehouse().getInsruments(order);
         if (statusOrder3) {
             System.out.println("Order #3 is executed (piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
         } else {
-            new MyException("Exception: order #3 is NOT executed, insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
+            System.out.println("Exception: order #3 is NOT executed, because insufficient number, (try piano=" + piano + ", guitar=" + guitar + ", trumpet=" + trumpet + ");");
             return;
         }
     }

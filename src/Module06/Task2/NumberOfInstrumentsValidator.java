@@ -6,7 +6,7 @@ import java.util.Set;
 public class NumberOfInstrumentsValidator {
     static boolean statusValidate = true;
     static String statusText = "";
-    public void Validate(Map inMap) throws IllegalArgumentException {
+    public void validate(Map inMap) throws IllegalArgumentException {
         // проверим не ли в заказе к-во товаров равное 0 или меньше 0
         Set<Map.Entry<String,Integer>> set = inMap.entrySet();
         for (Map.Entry<String,Integer> me: set) {
@@ -26,7 +26,7 @@ public class NumberOfInstrumentsValidator {
             }
         }
         if (!statusValidate) {
-            new MyException(statusText);
+            System.out.println(statusText);
         }
     }
 }

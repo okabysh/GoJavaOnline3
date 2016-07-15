@@ -9,7 +9,7 @@ public class CheckValue {
 
     public boolean check() {
         if (value <= 0) {
-            new MyException("You enter value: " + value + ". It is a negative or zero value, please enter positive value.");
+            System.out.println("You enter value: " + value + ". It is a negative or zero value, please enter positive value.");
             return false;
         } else {
             return true;
