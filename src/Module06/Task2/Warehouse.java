@@ -2,16 +2,18 @@ package src.Module06.Task2;
 
 import java.util.Map;
 
+import static src.Module06.Task2.Constants.*;
+
 public class Warehouse {
     private static int piano;
     private static int guitar;
     private static int trumpet;
 
-    public boolean getInsruments(Map inMap) {
+    public boolean getInsruments(Map<String, Integer> inMap) {
         boolean notAllow = false;
-        int toOrderPiano = (int) inMap.get("piano");
-        int toOrderGuitar = (int) inMap.get("guitar");
-        int toOrderTrumpet = (int) inMap.get("trumpet");
+        int toOrderPiano = inMap.get(CONST_PIANO);
+        int toOrderGuitar = inMap.get(CONST_GUITAR);
+        int toOrderTrumpet = inMap.get(CONST_TRUMPET);
         if (toOrderPiano > piano) {
             notAllow = true;
         }
@@ -29,13 +31,12 @@ public class Warehouse {
             trumpet = trumpet - toOrderTrumpet;
             return true;
         }
-
     }
 
-    public boolean setInsruments(Map inMap) {
-        this.piano = (int) inMap.get("piano");
-        this.guitar = (int) inMap.get("guitar");
-        this.trumpet = (int) inMap.get("trumpet");
+    public boolean setInsruments(Map<String, Integer> inMap) {
+        this.piano = inMap.get(CONST_PIANO);
+        this.guitar = inMap.get(CONST_GUITAR);
+        this.trumpet = inMap.get(CONST_TRUMPET);
         return true;
     }
 }
