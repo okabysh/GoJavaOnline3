@@ -39,9 +39,17 @@ public class Store {
         // номенклатура "drums", которая не предусмотрена на складе (для проверки работы исключения)
         //order.put("drums",new Integer(1));
         // проверка нет ли в заказе номенклатуры, которой не предусмотрено на складе (свое исключение)
-        validatorNomenclatures.validate(order);
+        try {
+            validatorNomenclatures.validate(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
         // проверка количества номенклатуры в заказе (=0 и <0)
-        validatorNumbers.validate(order);
+        try {
+            validatorNumbers.validate(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
         // попытка списания Заказа №1
         boolean statusOrder1 = warehouse.getInsruments(order);
         if (statusOrder1) {
@@ -62,9 +70,17 @@ public class Store {
         // номенклатура "drums", которая не предусмотрена на складе (для проверки работы исключения)
         //order.put("drums",new Integer(1));
         // проверка нет ли в заказе номенклатуры, которой не предусмотрено на складе (свое исключение)
-        validatorNomenclatures.validate(order);
+        try {
+            validatorNomenclatures.validate(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
         // проверка количества номенклатуры в заказе (=0 и <0)
-        validatorNumbers.validate(order);
+        try {
+            validatorNumbers.validate(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
         // попытка списания Заказа №2
         boolean statusOrder2 = warehouse.getInsruments(order);
         if (statusOrder2) {
@@ -85,9 +101,17 @@ public class Store {
         // номенклатура "drums", которая не предусмотрена на складе (для проверки работы исключения)
         //order.put("drums",new Integer(1));
         // проверка нет ли в заказе номенклатуры, которой не предусмотрено на складе (свое исключение)
-        validatorNomenclatures.validate(order);
+        try {
+            validatorNomenclatures.validate(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
         // проверка количества номенклатуры в заказе (=0 и <0)
-        validatorNumbers.validate(order);
+        try {
+            validatorNumbers.validate(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
         // попытка списания Заказа №3
         boolean statusOrder3 = warehouse.getInsruments(order);
         if (statusOrder3) {

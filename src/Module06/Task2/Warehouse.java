@@ -5,9 +5,9 @@ import java.util.Map;
 import static src.Module06.Task2.Constants.*;
 
 public class Warehouse {
-    private static int piano;
-    private static int guitar;
-    private static int trumpet;
+    private int piano;
+    private int guitar;
+    private int trumpet;
 
     public boolean getInsruments(Map<String, Integer> inMap) {
         boolean notAllow = false;
