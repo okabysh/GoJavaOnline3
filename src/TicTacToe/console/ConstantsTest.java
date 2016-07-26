@@ -1,6 +1,5 @@
 package console;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static console.Constants.*;
