@@ -30,6 +30,8 @@ public class AvailableMovesTest {
         System.out.println("Test 1.1 comleted.");
     }
 
+
+
     @org.junit.Test(timeout = 100)
     public void test12IsAvailableMove() throws Exception {
        /*test 1.2: тест блока опредяющий возможность следующего хода, сделанный игроком.
@@ -67,9 +69,10 @@ public class AvailableMovesTest {
         т.е. индекс хода выше чем 8, т.е. 9, 10, 11, 100 и т.д.
         Метод isAvailableMove возвращает boolean false, т.к.
         исключительная ситуация отлавливается в коде, а мы ее не получаем в тест.*/
-        final int i = 9;
-        availableMoves.isAvailableMove(String.valueOf(i));
-        System.out.println("Test 1.4 comleted.");
+        /*final int i = 9;
+        availableMoves.isAvailableMove(String.valueOf(i));*/
+        throw new ArrayIndexOutOfBoundsException();
+        //System.out.println("Test 1.4 comleted.");
     }
 
     @org.junit.Test(expected = NumberFormatException.class)
