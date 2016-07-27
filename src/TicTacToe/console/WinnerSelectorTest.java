@@ -180,6 +180,27 @@ public class WinnerSelectorTest {
         GameField.squares[6] = HUMAN_SIGN_X;
         tempValue = WinnerSelector.isWinnerExist();
         Assert.assertEquals(true, tempValue);
+
+        // test 5.9.1 проверка части кобинаций как еще не выграшную, поля заполненные компьютером
+        for (int i = 0; i < SIZE_OF_GAME_FIELD; i++) {
+            for (int j = 0; j < SIZE_OF_GAME_FIELD; j++) {
+                GameField.squares[j] = String.valueOf(j);
+            }
+            GameField.squares[i] = COMPUTER_SIGN_O;
+            tempValue = WinnerSelector.isWinnerExist();
+            Assert.assertEquals(false, tempValue);
+        }
+
+        // test 5.9.2 проверка части кобинаций как еще не выграшную, поля заполненные игроком
+        for (int i = 0; i < SIZE_OF_GAME_FIELD; i++) {
+            for (int j = 0; j < SIZE_OF_GAME_FIELD; j++) {
+                GameField.squares[j] = String.valueOf(j);
+            }
+            GameField.squares[i] = HUMAN_SIGN_X;
+            tempValue = WinnerSelector.isWinnerExist();
+            Assert.assertEquals(false, tempValue);
+        }
+
     }
 
 }
