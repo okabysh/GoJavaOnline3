@@ -11,7 +11,7 @@ public class WinnerSelector {
         new WinCombinations();
     }
 
-    boolean isWinnerExist() {
+    static boolean isWinnerExist() {
 
         for (int i = 0; i < WinCombinations.listWinCombination.size(); i++) {
             int[] winCase = WinCombinations.listWinCombination.get(i);
