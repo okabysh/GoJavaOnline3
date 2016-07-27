@@ -2,6 +2,7 @@ package console;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 import static console.Constants.*;
 import static org.junit.Assert.*;
@@ -15,7 +16,7 @@ public class AvailableMovesTest {
         System.out.println("Init class");
     }
 
-    @org.junit.Test(timeout = 100)
+    @Test(timeout = 100)
     public void test11IsAvailableMove() throws Exception {
         /*test 1.1: тест блока опредяющий возможность следующего хода, сделанный компьютером.
         Значение поля для компьютера - "O". Заполним все поля значением "O" (GameField.squares[]).
@@ -32,7 +33,7 @@ public class AvailableMovesTest {
 
 
 
-    @org.junit.Test(timeout = 100)
+    @Test(timeout = 100)
     public void test12IsAvailableMove() throws Exception {
        /*test 1.2: тест блока опредяющий возможность следующего хода, сделанный игроком.
         Значение поля для игрока - "X". Заполним все поля значением "X" (GameField.squares[]).
@@ -47,7 +48,7 @@ public class AvailableMovesTest {
         System.out.println("Test 1.2 comleted.");
     }
 
-    @org.junit.Test(timeout = 100)
+    @Test(timeout = 100)
     public void test13IsAvailableMove() throws Exception {
         /*test 1.3: тест блока опредяющий возможность следующего хода, сделанный компьютером или игроком.
         Заполним все поля значением "1", "2", "3", "4", "5", "6", "7", "8" и "9"  (GameField.squares[]).
@@ -62,7 +63,7 @@ public class AvailableMovesTest {
         System.out.println("Test 1.3 comleted.");
     }
 
-    @org.junit.Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void test14IsAvailableMove() throws Exception {
         /*test 1.4: тест возникновения исключительной ситуации ArrayIndexOutOfBoundsException,
         когда следующий ход выбран не из нашего массива,
@@ -75,7 +76,7 @@ public class AvailableMovesTest {
         //System.out.println("Test 1.4 comleted.");
     }
 
-    @org.junit.Test(expected = NumberFormatException.class)
+    @Test(expected = NumberFormatException.class)
     public void test15IsAvailableMove() throws Exception {
         /*test 1.5: тест возникновения исключительной ситуации NumberFormatException,
         когда следующий ход выбран не из нашего массива,
