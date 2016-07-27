@@ -12,7 +12,7 @@ public class ComputerPlayerTest {
 
     @Test
     public void isWinner() throws Exception {
-        /*test 1.1: */
+        /*test 1.1: {0,1,2,3,4,5,6,7,8} Empty*/
         for (int i = 0; i < SIZE_OF_GAME_FIELD; i++) {
             GameField.squares[i] = String.valueOf(i);
         }
