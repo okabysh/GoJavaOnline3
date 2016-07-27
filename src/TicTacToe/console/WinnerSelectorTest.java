@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 public class WinnerSelectorTest {
     private String[] gameField = GameField.squares;
     private boolean tempValue;
+    WinnerSelector winnerselector = new WinnerSelector();
 
     @BeforeClass
     public static void setUpClass() throws Exception {
@@ -26,7 +27,7 @@ public class WinnerSelectorTest {
         for (int i = 0; i < 3; i++) {
             GameField.squares[i] = COMPUTER_SIGN_O;
         }
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.1.2 проверка кобинации {0,1,2} как на выграшную, поля заполненные игроком
@@ -36,7 +37,7 @@ public class WinnerSelectorTest {
         for (int i = 0; i < 3; i++) {
             GameField.squares[i] = HUMAN_SIGN_X;
         }
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.2.1 проверка кобинации {3,4,5} как на выграшную, поля заполненные компьютером
@@ -46,7 +47,7 @@ public class WinnerSelectorTest {
         for (int i = 3; i < 6; i++) {
             GameField.squares[i] = COMPUTER_SIGN_O;
         }
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.2.2 проверка кобинации {3,4,5} как на выграшную, поля заполненные игроком
@@ -56,7 +57,7 @@ public class WinnerSelectorTest {
         for (int i = 3; i < 6; i++) {
             GameField.squares[i] = HUMAN_SIGN_X;
         }
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.3.1 проверка кобинации {6,7,8} как на выграшную, поля заполненные компьютером
@@ -66,7 +67,7 @@ public class WinnerSelectorTest {
         for (int i = 6; i < 9; i++) {
             GameField.squares[i] = COMPUTER_SIGN_O;
         }
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.3.2 проверка кобинации {6,7,8} как на выграшную, поля заполненные игроком
@@ -76,7 +77,7 @@ public class WinnerSelectorTest {
         for (int i = 6; i < 9; i++) {
             GameField.squares[i] = HUMAN_SIGN_X;
         }
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.4.1 проверка кобинации {0,3,6} как на выграшную, поля заполненные компьютером
@@ -86,7 +87,7 @@ public class WinnerSelectorTest {
         GameField.squares[0] = COMPUTER_SIGN_O;
         GameField.squares[3] = COMPUTER_SIGN_O;
         GameField.squares[6] = COMPUTER_SIGN_O;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.4.2 проверка кобинации {0,3,6} как на выграшную, поля заполненные игроком
@@ -96,7 +97,7 @@ public class WinnerSelectorTest {
         GameField.squares[0] = HUMAN_SIGN_X;
         GameField.squares[3] = HUMAN_SIGN_X;
         GameField.squares[6] = HUMAN_SIGN_X;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.5.1 проверка кобинации {1,4,7} как на выграшную, поля заполненные компьютером
@@ -106,7 +107,7 @@ public class WinnerSelectorTest {
         GameField.squares[1] = COMPUTER_SIGN_O;
         GameField.squares[4] = COMPUTER_SIGN_O;
         GameField.squares[7] = COMPUTER_SIGN_O;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.5.2 проверка кобинации {1,4,7} как на выграшную, поля заполненные игроком
@@ -116,7 +117,7 @@ public class WinnerSelectorTest {
         GameField.squares[1] = HUMAN_SIGN_X;
         GameField.squares[4] = HUMAN_SIGN_X;
         GameField.squares[7] = HUMAN_SIGN_X;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.6.1 проверка кобинации {2,5,8} как на выграшную, поля заполненные компьютером
@@ -126,7 +127,7 @@ public class WinnerSelectorTest {
         GameField.squares[2] = COMPUTER_SIGN_O;
         GameField.squares[5] = COMPUTER_SIGN_O;
         GameField.squares[8] = COMPUTER_SIGN_O;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.6.2 проверка кобинации {2,5,8} как на выграшную, поля заполненные игроком
@@ -136,7 +137,7 @@ public class WinnerSelectorTest {
         GameField.squares[2] = HUMAN_SIGN_X;
         GameField.squares[5] = HUMAN_SIGN_X;
         GameField.squares[8] = HUMAN_SIGN_X;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.7.1 проверка кобинации {0,4,8} как на выграшную, поля заполненные компьютером
@@ -146,7 +147,7 @@ public class WinnerSelectorTest {
         GameField.squares[0] = COMPUTER_SIGN_O;
         GameField.squares[4] = COMPUTER_SIGN_O;
         GameField.squares[8] = COMPUTER_SIGN_O;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.7.2 проверка кобинации {0,4,8} как на выграшную, поля заполненные игроком
@@ -156,7 +157,7 @@ public class WinnerSelectorTest {
         GameField.squares[0] = HUMAN_SIGN_X;
         GameField.squares[4] = HUMAN_SIGN_X;
         GameField.squares[8] = HUMAN_SIGN_X;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.8.1 проверка кобинации {2,4,6} как на выграшную, поля заполненные компьютером
@@ -166,7 +167,7 @@ public class WinnerSelectorTest {
         GameField.squares[2] = COMPUTER_SIGN_O;
         GameField.squares[4] = COMPUTER_SIGN_O;
         GameField.squares[6] = COMPUTER_SIGN_O;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.8.2 проверка кобинации {2,4,6} как на выграшную, поля заполненные игроком
@@ -176,7 +177,7 @@ public class WinnerSelectorTest {
         GameField.squares[2] = HUMAN_SIGN_X;
         GameField.squares[4] = HUMAN_SIGN_X;
         GameField.squares[6] = HUMAN_SIGN_X;
-        tempValue = WinnerSelector.isWinnerExist();
+        tempValue = winnerselector.isWinnerExist();
         assertEquals(true, tempValue);
 
         // test 5.9.1 проверка части кобинаций как еще не выграшную, поля заполненные компьютером
@@ -185,7 +186,7 @@ public class WinnerSelectorTest {
                 GameField.squares[j] = String.valueOf(j);
             }
             GameField.squares[i] = COMPUTER_SIGN_O;
-            tempValue = WinnerSelector.isWinnerExist();
+            tempValue = winnerselector.isWinnerExist();
             assertEquals(false, tempValue);
         }
 
@@ -195,7 +196,7 @@ public class WinnerSelectorTest {
                 GameField.squares[j] = String.valueOf(j);
             }
             GameField.squares[i] = HUMAN_SIGN_X;
-            tempValue = WinnerSelector.isWinnerExist();
+            tempValue = winnerselector.isWinnerExist();
             assertEquals(false, tempValue);
         }
 
