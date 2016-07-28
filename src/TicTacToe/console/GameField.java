@@ -13,7 +13,7 @@ public class GameField {
         builder = new StringBuilder();
     }
 
-    static String [] squares = new String[SIZE_OF_GAME_FIELD];
+    public static String [] squares = new String[SIZE_OF_GAME_FIELD];
 
     void showGameFieldMoves (){
         System.out.println(" ___ ___ ___");

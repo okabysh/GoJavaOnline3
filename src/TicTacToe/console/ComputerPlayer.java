@@ -26,7 +26,7 @@ import static console.Constants.INITIAL_DEPTH;
  *          3 4 5
  *          6 7 8
  */
-class ComputerPlayer {
+public class ComputerPlayer {
     //GameField gameField;
     private int[] intField = new int[SIZE_OF_GAME_FIELD];
     private List<Integer> availableIndexList;
@@ -50,6 +50,10 @@ class ComputerPlayer {
         }
     }
 
+    public void setParseGameFieldToIntField() {
+        parseGameFieldToIntField();
+    }
+
     /**
      * Method loops through intField to find empty cells.
      *
@@ -71,7 +75,7 @@ class ComputerPlayer {
      * @param playerSide Takes input of AI_PLAYER = 1; or HUMAN_PLAYER = 2;
      * @return boolean: true - if there is a winner with such param. False if there is no winner.
      */
-    boolean isWinner(int playerSide) {
+    public boolean isWinner(int playerSide) {
         boolean result = false;
 
         for (int i = 0; i < WinCombinations.listWinCombination.size(); i++) {
