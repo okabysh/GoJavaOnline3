@@ -1,5 +1,7 @@
-package console;
+package Tests;
 
+import console.GameField;
+import console.WinnerSelector;
 import org.junit.Test;
 
 import static console.Constants.SIZE_OF_GAME_FIELD;
@@ -7,6 +9,10 @@ import static console.Constants.COMPUTER_SIGN_O;
 import static console.Constants.HUMAN_SIGN_X;
 import static org.junit.Assert.*;
 
+/**
+ * @author EarthSoft
+ * @version 1.1
+ */
 public class WinnerSelectorTest {
     private String[] gameField = GameField.squares;
     private boolean tempValue;

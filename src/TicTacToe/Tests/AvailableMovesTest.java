@@ -1,20 +1,19 @@
-package console;
+package Tests;
 
-import org.junit.Assert;
-import org.junit.BeforeClass;
+import console.AvailableMoves;
+import console.GameField;
 import org.junit.Test;
 
 import static console.Constants.*;
 import static org.junit.Assert.*;
 
-public class AvailableMovesTest {
-    private static AvailableMoves availableMoves;
+/**
+ * @author EarthSoft
+ * @version 1.1
+ */
 
-    @BeforeClass
-    public static void setUpClass() {
-        availableMoves = new AvailableMoves();
-        System.out.println("Init class");
-    }
+public class AvailableMovesTest {
+    private AvailableMoves availableMoves = new AvailableMoves();
 
     @Test(timeout = 100)
     public void test11IsAvailableMove() throws Exception {
@@ -28,10 +27,8 @@ public class AvailableMovesTest {
             boolean testValue = availableMoves.isAvailableMove(String.valueOf(i));
             assertEquals(false, testValue);
         }
-        System.out.println("Test 1.1 comleted.");
+        System.out.println("Tests 1.1 comleted.");
     }
-
-
 
     @Test(timeout = 100)
     public void test12IsAvailableMove() throws Exception {
@@ -45,7 +42,7 @@ public class AvailableMovesTest {
             boolean testValue = availableMoves.isAvailableMove(String.valueOf(i));
             assertEquals(false, testValue);
         }
-        System.out.println("Test 1.2 comleted.");
+        System.out.println("Tests 1.2 comleted.");
     }
 
     @Test(timeout = 100)
@@ -60,31 +57,31 @@ public class AvailableMovesTest {
             boolean testValue = availableMoves.isAvailableMove(String.valueOf(i));
             assertEquals(true, testValue);
         }
-        System.out.println("Test 1.3 comleted.");
+        System.out.println("Tests 1.3 comleted.");
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test(timeout = 100)
     public void test14IsAvailableMove() throws Exception {
         /*test 1.4: тест возникновения исключительной ситуации ArrayIndexOutOfBoundsException,
         когда следующий ход выбран не из нашего массива,
         т.е. индекс хода выше чем 8, т.е. 9, 10, 11, 100 и т.д.
         Метод isAvailableMove возвращает boolean false, т.к.
-        исключительная ситуация отлавливается в коде, а мы ее не получаем в тест.*/
-        /*final int i = 9;
-        availableMoves.isAvailableMove(String.valueOf(i));*/
-        throw new ArrayIndexOutOfBoundsException();
-        //System.out.println("Test 1.4 comleted.");
+        исключительная ситуация обрабатывается при помощи конструкции try - catch.*/
+        final int i = 9;
+        boolean testValue = availableMoves.isAvailableMove(String.valueOf(i));
+        assertEquals(false, testValue);
+        System.out.println("Tests 1.4 comleted.");
     }
 
-    @Test(expected = NumberFormatException.class)
+    @Test(timeout = 100)
     public void test15IsAvailableMove() throws Exception {
-        /*test 1.5: тест возникновения исключительной ситуации NumberFormatException,
-        когда следующий ход выбран не из нашего массива,
-        т.е. индекс хода не цифра а любой другой символ.
+        /*test 1.4: тест возникновения исключительной ситуации NumberFormatException,
+        когда следующий ход выбран любой символ, отличающийся от цифры.
         Метод isAvailableMove возвращает boolean false, т.к.
-        исключительная ситуация отлавливается в коде, а мы ее не получаем в тест.*/
+        исключительная ситуация обрабатывается при помощи конструкции try - catch.*/
         final String i = "O";
-        availableMoves.isAvailableMove(i);
-        System.out.println("Test 1.5 comleted.");
+        boolean testValue = availableMoves.isAvailableMove(i);
+        assertEquals(false, testValue);
+        System.out.println("Tests 1.5 comleted.");
     }
 }
