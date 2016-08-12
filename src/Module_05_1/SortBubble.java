@@ -28,5 +28,6 @@ public class SortBubble {
         for (int k = 0; k < lenghtArray; k++) {
             System.out.println(myFirstArray[k]);
         }
+        System.out.println("Thank you!");
     }
 }
