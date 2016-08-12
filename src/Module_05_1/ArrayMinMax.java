@@ -15,5 +15,6 @@ public class ArrayMinMax {
         }
         System.out.println("Min value of array: " + minElement);
         System.out.println("Max value of array: " + maxElement);
+        System.out.println("Thank you ");
     }
 }
