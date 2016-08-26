@@ -1,9 +1,12 @@
 package Mobule09.HomeTask;
 
 import java.util.Scanner;
+import static Mobule09.HomeTask.Constants.*;
 
 public class CesarAlgorithm {
     static Scanner scanner = new Scanner(System.in);
+    private static String inputMessage;
+    private static Integer inputOffset = 0;
 
     public static void main(String[] args) {
         System.out.println("--- Welcome to \"CESAR\" algorithm ---");
@@ -16,17 +19,15 @@ public class CesarAlgorithm {
             if (inputModeUser.equals("exit")) {
                 System.out.println("--- Thank you for your time :) ---");
                 break;
-            } else if (inputModeUser.equals("1")) {
-                EncryptUserMassage();
-            } else if (inputModeUser.equals("2")) {
-                DecryptUserMassage();
+            } else if (inputModeUser.equals(ENCRYPT_MODE)) {
+                encryptUserMassage();
+            } else if (inputModeUser.equals(DECRYPT_MODE)) {
+                decryptUserMassage();
             }
         }
     }
 
-    public static void EncryptUserMassage() {
-        String inputMessage;
-        Integer inputOffset = 0;
+    public static void encryptUserMassage() {
         System.out.println("\n--- You have encrypt message ---------------");
         while (true) {
             System.out.println("Please enter you message:");
@@ -41,7 +42,7 @@ public class CesarAlgorithm {
         }
         System.out.println("--- Finished input message -----------------");
         System.out.println("You message: \"" + inputMessage + "\" with offset: " + inputOffset);
-        String encryptedMessage = new Encrypt().EncryptMessage(inputMessage, inputOffset);
+        String encryptedMessage = new Encrypt().encryptMessage(inputMessage, inputOffset);
         if (encryptedMessage != null) {
             System.out.println("Encrypted message: " + encryptedMessage);
         } else {
@@ -50,9 +51,7 @@ public class CesarAlgorithm {
         System.out.println("--- The message is encrypted successfuly ---\n");
     }
 
-    public static void DecryptUserMassage() {
-        String inputMessage;
-        Integer inputOffset = 0;
+    public static void decryptUserMassage() {
         System.out.println("\n--- You have decrypt message ---------------");
         while (true) {
             System.out.println("Please enter decrypt message:");
@@ -67,7 +66,7 @@ public class CesarAlgorithm {
         }
         System.out.println("--- Finished input message -----------------");
         System.out.println("You message: \"" + inputMessage + "\" with offset: " + inputOffset);
-        String decryptedMessage = new Decrypt().DecryptMessage(inputMessage, inputOffset);
+        String decryptedMessage = new Decrypt().decryptMessage(inputMessage, inputOffset);
         if (decryptedMessage != null) {
             System.out.println("Decrypted message: " + decryptedMessage);
         } else {

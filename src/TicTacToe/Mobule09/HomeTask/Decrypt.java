@@ -3,9 +3,10 @@ package Mobule09.HomeTask;
 import static Mobule09.HomeTask.Constants.*;
 
 public class Decrypt {
-    private StringBuilder messageDecrypt = new StringBuilder();
 
-    public String DecryptMessage(String inputMessage, int inputOffset) {
+    public String decryptMessage(String inputMessage, int inputOffset) {
+        StringBuilder messageDecrypt = new StringBuilder();
+
         if (!inputMessage.isEmpty()) {
             char charArray[] = inputMessage.toCharArray();
             int nDecrypt;

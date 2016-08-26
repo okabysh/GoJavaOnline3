@@ -3,9 +3,10 @@ package Mobule09.HomeTask;
 import static Mobule09.HomeTask.Constants.*;
 
 public class Encrypt {
-    private StringBuilder messageEncrypt = new StringBuilder();
 
-    public String EncryptMessage(String inputMessage, int inputOffset) {
+    public String encryptMessage(String inputMessage, int inputOffset) {
+        StringBuilder messageEncrypt = new StringBuilder();
+
         if (!inputMessage.isEmpty()) {
             char charArray[] = inputMessage.toCharArray();
             int nEncrypt;
