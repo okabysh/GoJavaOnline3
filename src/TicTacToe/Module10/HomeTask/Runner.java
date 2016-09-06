@@ -2,21 +2,41 @@ package Module10.HomeTask;
 
 import java.io.IOException;
 import java.util.Scanner;
+
 import static Module10.HomeTask.Constants.*;
 
 public class Runner {
-    static Scanner scanner = new Scanner(System.in);
-    private static String inputMessage;
-    private static Integer inputOffset = 0;
+    private Scanner scanner;
+    private String inputMessage;
+    private Integer inputOffset = 0;
+    Encrypt encrypt;
+    Decrypt decrypt;
 
-    public static void main(String[] args) throws IOException {
+    public Runner() {
+        scanner = new Scanner(System.in);
+        decrypt = new Decrypt();
+        encrypt = new Encrypt();
+    }
+
+    public static void main(String[] args) {
+        Runner runner = new Runner();
+
+        try {
+            runner.test();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void test() throws IOException  {
         System.out.println("--- Welcome to \"CESAR\" algorithm with new function: save/load encrypted message into file EncryptedMessage.txt ---");
         while (true) {
             System.out.println("Please enter:");
             System.out.println("\'1\' if you want encrypt message and save to file");
             System.out.println("\'2\' if you want load from file and decrypt message");
             System.out.println("\'exit\' if you want exit from program");
-            String inputModeUser = scanner.next();
+            String inputModeUser = scanner.nextLine();
             if (inputModeUser.equals("exit")) {
                 System.out.println("--- Thank you for your time :) ---");
                 break;
@@ -28,23 +48,36 @@ public class Runner {
         }
     }
 
-    public static void encryptUserMassageAndSave() throws IOException {
+
+    public void encryptUserMassageAndSave() throws IOException {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("\n--- You have encrypt message and save to file ---------------");
-        while (true) {
+        boolean notDone = true;
+        inputMessage = "";
+        while (notDone) {
             System.out.println("Please enter you message:");
-            Scanner scannerMessage = new Scanner(System.in);
-            inputMessage = scannerMessage.nextLine();
+            //Scanner scannerMessage = new Scanner(System.in);
+            inputMessage = scanner.nextLine();
+            //  ^ эту переменную нужно вынести за цикл, так как по истечении цикла - она выпадает из скоупа памяти
+            // и будет удалена после окончания цикла.
+
             System.out.println("Please enter offset algorithm (integer from 1 to 26):");
-            inputOffset = scanner.nextInt();
+            Scanner scanner2 = new Scanner(System.in);
+            inputOffset = scanner2.nextInt();
             if (inputMessage.isEmpty() || !(inputOffset >= 1 && inputOffset <= 26)) {
                 System.out.println("\nYou have entered the wrong data, please re-enter data.");
+                notDone = false;
             } else {
                 break;
             }
         }
         System.out.println("--- Finished input message -----------------");
         System.out.println("You message: \"" + inputMessage + "\" with offset: " + inputOffset);
-        String encryptedMessage = new Encrypt().encryptMessage(inputMessage, inputOffset);
+
+        String encryptedMessage = encrypt.encryptMessage(inputMessage, inputOffset);
+
+
+
         if (encryptedMessage != null) {
             System.out.println("Encrypted message: " + encryptedMessage);
         } else {
@@ -60,7 +93,7 @@ public class Runner {
         }
     }
 
-    public static void decryptUserMassageAndLoad() throws IOException {
+    public void decryptUserMassageAndLoad() throws IOException {
         String messageFromFile = null;
         System.out.println("\n--- You have decrypt message ---------------");
         while (true) {
@@ -83,7 +116,7 @@ public class Runner {
         }
         System.out.println("--- Finished input message -----------------");
         System.out.println("You encrypted message: \"" + messageFromFile + "\" with offset: " + inputOffset);
-        String decryptedMessage = new Decrypt().decryptMessage(messageFromFile, inputOffset);
+        String decryptedMessage = decrypt.decryptMessage(messageFromFile, inputOffset);
         if (decryptedMessage != null) {
             System.out.println("Decrypted message: " + decryptedMessage);
         } else {
