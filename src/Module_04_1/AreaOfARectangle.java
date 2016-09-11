@@ -12,5 +12,6 @@ public class AreaOfARectangle {
     public int getArea() {
         area = sideA * sideB;
         return area;
+
     }
 }
