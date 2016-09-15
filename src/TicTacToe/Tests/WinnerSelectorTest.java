@@ -1,7 +1,6 @@
 package Tests;
 
 import console.GameField;
-import console.WinnerSelector;
 import org.junit.Test;
 
 import static console.Constants.SIZE_OF_GAME_FIELD;
@@ -16,7 +15,7 @@ import static org.junit.Assert.*;
 public class WinnerSelectorTest {
     private String[] gameField = GameField.squares;
     private boolean tempValue;
-    private WinnerSelector winnerSelector = new WinnerSelector();
+    private console.WinnerSelectorTest winnerSelector = new console.WinnerSelectorTest();
 
     @Test
     public void testIsWinnerExist() throws Exception {

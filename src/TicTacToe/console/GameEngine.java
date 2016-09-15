@@ -12,13 +12,13 @@ public class GameEngine {
 
     private int emptySquaresLeft;
     private GameField gameField;
-    private WinnerSelector winnerSelector;
+    private WinnerSelectorTest winnerSelector;
     private ComputerPlayer computer;
     private HumanPlayer humanPlayer;
 
     public GameEngine() {
         gameField = new GameField();
-        winnerSelector = new WinnerSelector();
+        winnerSelector = new WinnerSelectorTest();
         computer = new ComputerPlayer();
         humanPlayer = new HumanPlayer();
         emptySquaresLeft = SIZE_OF_GAME_FIELD;
