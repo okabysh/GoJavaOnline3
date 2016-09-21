@@ -70,36 +70,35 @@ public class RunList {
             currentTime = myArrayList.containtsFunctionInArrayList(VALUE_100k);
             totalTime = totalTime + currentTime;
             results.saveResult(TypeCollections.ArrayListContaints, VALUE_100k, i, currentTime);
-            System.out.println(i);
         }
         System.out.println("function containts(value) from ArrayList(100,000) executed avarage: "+totalTime/VALUE_ITERATION+"ms");
 
-//        // add() function in ArrayList<>
-//        for (int i = 1; i < VALUE_ITERATION; i++) {
-//            currentTime = myArrayList.addFunctionInArrayList(VALUE_1M);
-//            totalTime = totalTime + currentTime;
-//        }
-//        System.out.println("function add(index) to ArrayList(1,000,000): "+totalTime/VALUE_ITERATION+"ms");
-//
-//        // get() function in ArrayList<>
-//        for (int i = 1; i < VALUE_ITERATION; i++) {
-//            currentTime = myArrayList.getFunctionInArrayList(VALUE_1M);
-//            totalTime = totalTime + currentTime;
-//        }
-//        System.out.println("function get(index) from ArrayList(1,000,000): "+totalTime/VALUE_ITERATION+"ms");
-//
-//        // remove() function in ArrayList<>
-//        for (int i = 1; i < VALUE_ITERATION; i++) {
-//            currentTime = myArrayList.removeFunctionInArrayList(VALUE_1M);
-//            totalTime = totalTime + currentTime;
-//        }
-//        System.out.println("function remove(index) from ArrayList(1,000,000): "+totalTime/VALUE_ITERATION+"ms");
-//
-//        // containts() function in ArrayList<>
-//        for (int i = 1; i < VALUE_ITERATION; i++) {
-//            currentTime = myArrayList.containtsFunctionInArrayList(VALUE_1M);
-//            totalTime = totalTime + currentTime;
-//        }
-//        System.out.println("function containts(value) from ArrayList(1,000,000): "+totalTime/VALUE_ITERATION+"ms");
+        // add() function in ArrayList<>
+        for (int i = 1; i < VALUE_ITERATION; i++) {
+            currentTime = myArrayList.addFunctionInArrayList(VALUE_1M);
+            totalTime = totalTime + currentTime;
+        }
+        System.out.println("function add(index) to ArrayList(1,000,000) executed avarage: "+totalTime/VALUE_ITERATION+"ms");
+
+        // get() function in ArrayList<>
+        for (int i = 1; i < VALUE_ITERATION; i++) {
+            currentTime = myArrayList.getFunctionInArrayList(VALUE_1M);
+            totalTime = totalTime + currentTime;
+        }
+        System.out.println("function get(index) from ArrayList(1,000,000) executed avarage: "+totalTime/VALUE_ITERATION+"ms");
+
+        // remove() function in ArrayList<>
+        for (int i = 1; i < VALUE_ITERATION; i++) {
+            currentTime = myArrayList.removeFunctionInArrayList(VALUE_1M);
+            totalTime = totalTime + currentTime;
+        }
+        System.out.println("function remove(index) from ArrayList(1,000,000) executed avarage: "+totalTime/VALUE_ITERATION+"ms");
+
+        // containts() function in ArrayList<>
+        for (int i = 1; i < VALUE_ITERATION; i++) {
+            currentTime = myArrayList.containtsFunctionInArrayList(VALUE_1M);
+            totalTime = totalTime + currentTime;
+        }
+        System.out.println("function containts(value) from ArrayList(1,000,000) executed avarage: "+totalTime/VALUE_ITERATION+"ms");
     }
 }
