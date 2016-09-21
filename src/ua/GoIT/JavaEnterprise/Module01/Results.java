@@ -100,4 +100,32 @@ public class Results {
         return 0;
     }
 
+    public void clearResult(TypeCollections typeCollections, Integer value) {
+        if (typeCollections == TypeCollections.ArrayListAdd && value == VALUE_10k) {
+            this.resultArrayListAdd_10k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListAdd && value == VALUE_100k) {
+            this.resultArrayListAdd_100k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListAdd && value == VALUE_1M) {
+            this.resultArrayListAdd_1M.clear();
+        } else if (typeCollections == TypeCollections.ArrayListGet && value == VALUE_10k) {
+            this.resultArrayListGet_10k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListGet && value == VALUE_100k) {
+            this.resultArrayListGet_100k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListGet && value == VALUE_1M) {
+            this.resultArrayListGet_1M.clear();
+        } else if (typeCollections == TypeCollections.ArrayListRemove && value == VALUE_10k) {
+            this.resultArrayListRemove_10k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListRemove && value == VALUE_100k) {
+            this.resultArrayListRemove_100k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListRemove && value == VALUE_1M) {
+            this.resultArrayListRemove_1M.clear();
+        } else if (typeCollections == TypeCollections.ArrayListContaints && value == VALUE_10k) {
+            this.resultArrayListContaints_10k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListContaints && value == VALUE_100k) {
+            this.resultArrayListContaints_100k.clear();
+        } else if (typeCollections == TypeCollections.ArrayListContaints && value == VALUE_1M) {
+            this.resultArrayListContaints_1M.clear();
+        }
+    }
+
 }
