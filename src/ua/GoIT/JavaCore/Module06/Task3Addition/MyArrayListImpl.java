@@ -1,4 +1,4 @@
-package src.Module06.Task3Addition;
+package ua.GoIT.JavaCore.Module06.Task3Addition;
 
 import java.util.Arrays;
 
@@ -27,7 +27,7 @@ public class MyArrayListImpl implements MyArrayList {
 
     @Override
     public Object get(int index) {
-        return null;
+        return data[index];
     }
 
     @Override

@@ -1,4 +1,4 @@
-package src.Module06.Task3Addition;
+package ua.GoIT.JavaCore.Module06.Task3Addition;
 
 public interface MyArrayList {
 
