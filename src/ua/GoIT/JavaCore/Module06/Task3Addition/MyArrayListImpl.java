@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class MyArrayListImpl implements MyArrayList {
     private Object[] data;
-    private int capacity;
     private int currentSize;
 
     public MyArrayListImpl() {
@@ -12,14 +11,13 @@ public class MyArrayListImpl implements MyArrayList {
     }
 
     public MyArrayListImpl(int capacity) {
-        this.capacity = capacity;
         data = new Object[capacity];
     }
 
     @Override
     public void add(Object object) {
         if (currentSize + 1 > data.length) {
-            data = Arrays.copyOf(data, data.length + capacity );
+            data = Arrays.copyOf(data, (data.length * 3 / 2 + 1));
         }
         data[currentSize] = object;
         currentSize++;
@@ -27,7 +25,13 @@ public class MyArrayListImpl implements MyArrayList {
 
     @Override
     public Object get(int index) {
-        return data[index];
+        try {
+            return data[index];
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Error! You index:[" + index + "] is out of bounds!");
+            return null;
+        }
+
     }
 
     @Override

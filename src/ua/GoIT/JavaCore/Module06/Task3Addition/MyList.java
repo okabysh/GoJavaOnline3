@@ -11,6 +11,6 @@ public class MyList {
 
         System.out.println("Size: " + myArrayList.size());
         System.out.println("Is empty: " + myArrayList.isEmpty());
-        System.out.println("Element #3 is: " + myArrayList.get(3));
+        System.out.println("Element #3 is: " + myArrayList.get(-3));
     }
 }
