@@ -79,25 +79,38 @@ public class Methods {
 
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
-    //// TODO: 11.10.2016 iteratorAddMethodInArrayList
+
+    //// TODO: 11.10.2016 iteratorAddMethodInArrayList mod.1
     public Double iteratorAddMethodInArrayList(Integer number) {
-        return 0d;
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        for (int i=0; i < number; i++) {
+            arrayList.add(i, i);
+        }
+        long startTime = System.nanoTime();
+        for (int i=0; i < VALUE_ITERATION; i++) {
+            ListIterator<Integer> listIterator = arrayList.listIterator(random.nextInt(number-1));
+            listIterator.add(i);
+        }
+        long finishTime = System.nanoTime();
+        long estimatedTime = finishTime - startTime;
+        return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
-    //// TODO: 11.10.2016 iteratorRemoveMethodInArrayList
+
+    //// TODO: 11.10.2016 iteratorRemoveMethodInArrayList mod.1
     public Double iteratorRemoveMethodInArrayList(Integer number) {
-//        ArrayList<Integer> arrayList = new ArrayList<Integer>(number);
-//        for (int i=0; i < number; i++) {
-//            arrayList.add(i, i);
-//        }
-//        long startTime = System.nanoTime();
-//        for (int i=0; i < VALUE_ITERATION; i++) {
-//            arrayList.remove(random.nextInt(number-VALUE_ITERATION-1));
-//        }
-//        long finishTime = System.nanoTime();
-//        long estimatedTime = finishTime - startTime;
-//
-//        return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
-        return 0d;
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        for (int i=0; i < number; i++) {
+            arrayList.add(i, i);
+        }
+        long startTime = System.nanoTime();
+        for (int i=0; i < VALUE_ITERATION; i++) {
+            ListIterator<Integer> listIterator = arrayList.listIterator(random.nextInt(number-VALUE_ITERATION-1));
+            listIterator.next(); listIterator.previous();
+            listIterator.remove();
+        }
+        long finishTime = System.nanoTime();
+        long estimatedTime = finishTime - startTime;
+        return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
     public Double addMethodInLinkedList(Integer number) {
@@ -172,14 +185,37 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 11.10.2016 iteratorAddMethodInLinkedList
+    //// TODO: 11.10.2016 iteratorAddMethodInLinkedList mod.1
     public Double iteratorAddMethodInLinkedList(Integer number) {
-        return 0d;
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        for (int i=0; i < number; i++) {
+            linkedList.add(i, i);
+        }
+        long startTime = System.nanoTime();
+        for (int i=0; i < VALUE_ITERATION; i++) {
+            ListIterator<Integer> listIterator = linkedList.listIterator(random.nextInt(number-1));
+            listIterator.add(i);
+        }
+        long finishTime = System.nanoTime();
+        long estimatedTime = finishTime - startTime;
+        return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 11.10.2016 iteratorRemoveMethodInLinkedList
+    //// TODO: 11.10.2016 iteratorRemoveMethodInLinkedList mod.1
     public Double iteratorRemoveMethodInLinkedList(Integer number) {
-        return 0d;
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        for (int i=0; i < number; i++) {
+            linkedList.add(i, i);
+        }
+        long startTime = System.nanoTime();
+        for (int i=0; i < VALUE_ITERATION; i++) {
+            ListIterator<Integer> listIterator = linkedList.listIterator(random.nextInt(number-VALUE_ITERATION-1));
+            listIterator.next(); listIterator.previous();
+            listIterator.remove();
+        }
+        long finishTime = System.nanoTime();
+        long estimatedTime = finishTime - startTime;
+        return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
     public Double addMethodInHashSet(Integer number) {

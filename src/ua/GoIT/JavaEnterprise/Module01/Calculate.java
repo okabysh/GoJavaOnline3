@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Date;
 
 import static ua.GoIT.JavaEnterprise.Module01.Constants.*;
 
@@ -117,19 +118,19 @@ public class Calculate {
         results.saveResult(TypeCollections.LinkedListPopulate_1M, currentTime);
 
         // iteratorAdd() function in LinkedList<>
-        currentTime = calculate.populateMethodInLinkedList(VALUE_10k);
+        currentTime = calculate.iteratorAddMethodInLinkedList(VALUE_10k);
         results.saveResult(TypeCollections.LinkedListIteratorAdd_10k, currentTime);
-        currentTime = calculate.populateMethodInLinkedList(VALUE_100k);
+        currentTime = calculate.iteratorAddMethodInLinkedList(VALUE_100k);
         results.saveResult(TypeCollections.LinkedListIteratorAdd_100k, currentTime);
-        currentTime = calculate.populateMethodInLinkedList(VALUE_1M);
+        currentTime = calculate.iteratorAddMethodInLinkedList(VALUE_1M);
         results.saveResult(TypeCollections.LinkedListIteratorAdd_1M, currentTime);
 
         // iteratorRemove() function in LinkedList<>
-        currentTime = calculate.populateMethodInLinkedList(VALUE_10k);
+        currentTime = calculate.iteratorRemoveMethodInLinkedList(VALUE_10k);
         results.saveResult(TypeCollections.LinkedListIteratorRemove_10k, currentTime);
-        currentTime = calculate.populateMethodInLinkedList(VALUE_100k);
+        currentTime = calculate.iteratorRemoveMethodInLinkedList(VALUE_100k);
         results.saveResult(TypeCollections.LinkedListIteratorRemove_100k, currentTime);
-        currentTime = calculate.populateMethodInLinkedList(VALUE_1M);
+        currentTime = calculate.iteratorRemoveMethodInLinkedList(VALUE_1M);
         results.saveResult(TypeCollections.LinkedListIteratorRemove_1M, currentTime);
     }
 
@@ -177,19 +178,19 @@ public class Calculate {
         results.saveResult(TypeCollections.HashSetPopulate_1M, currentTime);
 
         // iteratorAdd() function in HashSet<>
-        currentTime = calculate.populateMethodInHashSet(VALUE_10k);
+        currentTime = calculate.iteratorAddMethodInHashSet(VALUE_10k);
         results.saveResult(TypeCollections.HashSetIteratorAdd_10k, currentTime);
-        currentTime = calculate.populateMethodInHashSet(VALUE_100k);
+        currentTime = calculate.iteratorAddMethodInHashSet(VALUE_100k);
         results.saveResult(TypeCollections.HashSetIteratorAdd_100k, currentTime);
-        currentTime = calculate.populateMethodInHashSet(VALUE_1M);
+        currentTime = calculate.iteratorAddMethodInHashSet(VALUE_1M);
         results.saveResult(TypeCollections.HashSetIteratorAdd_1M, currentTime);
 
         // iteratorRemove() function in HashSet<>
-        currentTime = calculate.populateMethodInHashSet(VALUE_10k);
+        currentTime = calculate.iteratorRemoveMethodInHashSet(VALUE_10k);
         results.saveResult(TypeCollections.HashSetIteratorRemove_10k, currentTime);
-        currentTime = calculate.populateMethodInHashSet(VALUE_100k);
+        currentTime = calculate.iteratorRemoveMethodInHashSet(VALUE_100k);
         results.saveResult(TypeCollections.HashSetIteratorRemove_100k, currentTime);
-        currentTime = calculate.populateMethodInHashSet(VALUE_1M);
+        currentTime = calculate.iteratorRemoveMethodInHashSet(VALUE_1M);
         results.saveResult(TypeCollections.HashSetIteratorRemove_1M, currentTime);
     }
 
@@ -237,19 +238,19 @@ public class Calculate {
         results.saveResult(TypeCollections.TreeSetPopulate_1M, currentTime);
 
         // iteratorAdd() function in TreeSet<>
-        currentTime = calculate.containtsMethodInTreeSet(VALUE_10k);
+        currentTime = calculate.iteratorAddMethodInTreeSet(VALUE_10k);
         results.saveResult(TypeCollections.TreeSetIteratorAdd_10k, currentTime);
-        currentTime = calculate.containtsMethodInTreeSet(VALUE_100k);
+        currentTime = calculate.iteratorAddMethodInTreeSet(VALUE_100k);
         results.saveResult(TypeCollections.TreeSetIteratorAdd_100k, currentTime);
-        currentTime = calculate.containtsMethodInTreeSet(VALUE_1M);
+        currentTime = calculate.iteratorAddMethodInTreeSet(VALUE_1M);
         results.saveResult(TypeCollections.TreeSetIteratorAdd_1M, currentTime);
 
         // iteratorRemove() function in TreeSet<>
-        currentTime = calculate.populateMethodInTreeSet(VALUE_10k);
+        currentTime = calculate.iteratorRemoveMethodInTreeSet(VALUE_10k);
         results.saveResult(TypeCollections.TreeSetIteratorRemove_10k, currentTime);
-        currentTime = calculate.populateMethodInTreeSet(VALUE_100k);
+        currentTime = calculate.iteratorRemoveMethodInTreeSet(VALUE_100k);
         results.saveResult(TypeCollections.TreeSetIteratorRemove_100k, currentTime);
-        currentTime = calculate.populateMethodInTreeSet(VALUE_1M);
+        currentTime = calculate.iteratorRemoveMethodInTreeSet(VALUE_1M);
         results.saveResult(TypeCollections.TreeSetIteratorRemove_1M, currentTime);
     }
 
@@ -385,6 +386,7 @@ public class Calculate {
 
     public void saveToExcel() {
         Workbook workbook = new HSSFWorkbook();
+        Date date = new Date();
 
         //sheet_10k
         Sheet sheet_10k = workbook.createSheet("Table 10k");
@@ -451,6 +453,9 @@ public class Calculate {
         rowTreeSet_10k.createCell(6).setCellValue(results.loadResult(TypeCollections.TreeSetIteratorAdd_10k));
         rowTreeSet_10k.createCell(7).setCellValue(results.loadResult(TypeCollections.TreeSetIteratorRemove_10k));
 
+        Row rowCurrentTime_10k = sheet_10k.createRow(6);
+        rowCurrentTime_10k.createCell(0).setCellValue("date of creation: "+date.toString());
+
         sheet_10k.autoSizeColumn(1); sheet_10k.autoSizeColumn(2);
         sheet_10k.autoSizeColumn(3); sheet_10k.autoSizeColumn(4);
         sheet_10k.autoSizeColumn(5); sheet_10k.autoSizeColumn(6);
@@ -516,6 +521,9 @@ public class Calculate {
         rowTreeSet_100k.createCell(6).setCellValue(results.loadResult(TypeCollections.TreeSetIteratorAdd_100k));
         rowTreeSet_100k.createCell(7).setCellValue(results.loadResult(TypeCollections.TreeSetIteratorRemove_100k));
 
+        Row rowCurrentTime_100k = sheet_100k.createRow(6);
+        rowCurrentTime_100k.createCell(0).setCellValue("date of creation: "+date.toString());
+
         sheet_100k.autoSizeColumn(1); sheet_100k.autoSizeColumn(2);
         sheet_100k.autoSizeColumn(3); sheet_100k.autoSizeColumn(4);
         sheet_100k.autoSizeColumn(5); sheet_100k.autoSizeColumn(6);
@@ -580,6 +588,9 @@ public class Calculate {
         rowTreeSet_1M.createCell(5).setCellValue(results.loadResult(TypeCollections.TreeSetPopulate_1M));
         rowTreeSet_1M.createCell(6).setCellValue(results.loadResult(TypeCollections.TreeSetIteratorAdd_1M));
         rowTreeSet_1M.createCell(7).setCellValue(results.loadResult(TypeCollections.TreeSetIteratorRemove_1M));
+
+        Row rowCurrentTime_1M = sheet_1M.createRow(6);
+        rowCurrentTime_1M.createCell(0).setCellValue("date of creation: "+date.toString());
 
         sheet_1M.autoSizeColumn(1); sheet_1M.autoSizeColumn(2);
         sheet_1M.autoSizeColumn(3); sheet_1M.autoSizeColumn(4);
