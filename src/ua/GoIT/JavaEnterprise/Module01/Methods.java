@@ -80,7 +80,6 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 11.10.2016 iteratorAddMethodInArrayList mod.1
     public Double iteratorAddMethodInArrayList(Integer number) {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         for (int i=0; i < number; i++) {
@@ -96,7 +95,6 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 11.10.2016 iteratorRemoveMethodInArrayList mod.1
     public Double iteratorRemoveMethodInArrayList(Integer number) {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         for (int i=0; i < number; i++) {
@@ -185,7 +183,6 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 11.10.2016 iteratorAddMethodInLinkedList mod.1
     public Double iteratorAddMethodInLinkedList(Integer number) {
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
         for (int i=0; i < number; i++) {
@@ -201,7 +198,6 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 11.10.2016 iteratorRemoveMethodInLinkedList mod.1
     public Double iteratorRemoveMethodInLinkedList(Integer number) {
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
         for (int i=0; i < number; i++) {
@@ -280,13 +276,13 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 12.10.2016 iteratorAddMethodInHashSet
     public Double iteratorAddMethodInHashSet(Integer number) {
+        // this method is not avaible in this collection
         return 0d;
     }
 
-    //// TODO: 12.10.2016 iteratorRemoveMethodInHashSet
     public Double iteratorRemoveMethodInHashSet(Integer number) {
+        // this method is not avaible in this collection
         return 0d;
     }
 
@@ -352,13 +348,13 @@ public class Methods {
         return convert.nanosecodToMicrosecond(estimatedTime/VALUE_ITERATION, 4);
     }
 
-    //// TODO: 12.10.2016 iteratorAddMethodInTreeSet
     public Double iteratorAddMethodInTreeSet(Integer number) {
+        // this method is not avaible in this collection
         return 0d;
     }
 
-    //// TODO: 12.10.2016 iteratorRemoveMethodInTreeSet
     public Double iteratorRemoveMethodInTreeSet(Integer number) {
+        // this method is not avaible in this collection
         return 0d;
     }
 }
