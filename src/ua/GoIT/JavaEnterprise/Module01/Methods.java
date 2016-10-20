@@ -5,8 +5,13 @@ import java.util.*;
 import static ua.GoIT.JavaEnterprise.Module01.Constants.*;
 
 public class Methods {
-    final Random random = new Random();
-    Convert convert = new Convert();
+    private final Random random;
+    private Convert convert;
+
+    public Methods() {
+        this.random = new Random();
+        this.convert = new Convert();
+    }
 
     public Double addMethodInArrayList(Integer number) {
         ArrayList<Integer> arrayList = new ArrayList<Integer>(number);

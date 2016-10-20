@@ -1,6 +1,8 @@
 package ua.GoIT.JavaEnterprise.Module01;
 
 public enum TypeCollections {
+    ArrayList, LinkedList, HashSet, TreeSet,
+
     ArrayListAdd_10k, ArrayListAdd_100k, ArrayListAdd_1M,
     ArrayListGet_10k, ArrayListGet_100k, ArrayListGet_1M,
     ArrayListRemove_10k, ArrayListRemove_100k, ArrayListRemove_1M,
