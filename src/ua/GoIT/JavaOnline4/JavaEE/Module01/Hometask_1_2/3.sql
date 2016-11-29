@@ -1,4 +1,3 @@
-﻿SELECT
-	_descryption,
-	salary
+SELECT
+	SUM(salary) AS TotalSalary
 FROM developers
