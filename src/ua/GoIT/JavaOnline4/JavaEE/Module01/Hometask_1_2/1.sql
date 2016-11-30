@@ -1,4 +1,4 @@
-﻿ALTER TABLE developers ADD Salary real
+﻿ALTER TABLE developers ADD Salary real;
 
 UPDATE developers SET salary = 2000 WHERE _ID=1;
 UPDATE developers SET salary = 2100 WHERE _ID=2;
